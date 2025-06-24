@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: nextGen
+  datasource:
+    username: laver
+    password: 7T6ZpRHDSCXYZeHB
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.199.156.222:3306/laver?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true
+  ai:
+    openai:
+      api-key: sk-57d0dd46805647d9a8aa4d38b41b759b
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      embedding:
+        options:
+          model: text-embedding-v3
+      chat:
+        options:
+          model: qwen-plus
+server:
+  port: 8899
