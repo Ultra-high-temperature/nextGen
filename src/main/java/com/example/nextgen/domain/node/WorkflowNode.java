@@ -64,8 +64,7 @@ public abstract class WorkflowNode<T, R> {
         try {
             // 输入Map，在这里按实参匹配，将参数传入apply方法
             String jsonString = JSON.toJSONString(inputData);
-            T javaBean = JSON.parseObject(jsonString, new TypeReference<T>() {
-            });
+            T javaBean = parseInputObject(jsonString);
             // 实际业务逻辑
             R apply = execute(javaBean);
             JSONObject jsonObject = JSONObject.parseObject(JSON.toJSONString(apply));
@@ -76,6 +75,14 @@ public abstract class WorkflowNode<T, R> {
             addDomainEvent(new WorkflowEvent.NodeFailed(nodeId, name, e.getMessage()));
         }
     }
+
+
+    /**
+     * 父类定义了何时解析，但将具体如何解析的实现留给子类。
+     * @param inputJson 输入的JSON字符串
+     * @return 解析后的 T 类型对象
+     */
+    protected abstract T parseInputObject(String inputJson);
 
     /**
      * 抽象执行方法，子类必须实现具体的业务逻辑

@@ -1,5 +1,8 @@
 package com.example.nextgen.domain.node;
 
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.TypeReference;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +21,12 @@ public class StartNode extends WorkflowNode<Map<String, Object>,Map<String, Obje
 
 
     @Override
+    protected Map<String, Object> parseInputObject(String inputJson) {
+        return JSON.parseObject(inputJson, new TypeReference<Map<String, Object>>() {
+        });
+    }
+
+    @Override
     protected Map<String, Object> execute(Map<String, Object> initialData) {
 
         // 开始节点的执行逻辑很简单，主要是初始化数据
@@ -34,7 +43,7 @@ public class StartNode extends WorkflowNode<Map<String, Object>,Map<String, Obje
             output.put("startNodeName", getName());
             
             // 标记执行完成
-            complete(output);
+//            complete(output);
             
         } catch (Exception e) {
             fail("开始节点执行失败: " + e.getMessage());

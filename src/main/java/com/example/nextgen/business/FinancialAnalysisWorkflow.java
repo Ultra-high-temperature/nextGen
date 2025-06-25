@@ -43,6 +43,7 @@ public class FinancialAnalysisWorkflow {
         List<WorkflowApplicationService.CreateNodeCommand> nodes = Arrays.asList(
                 createStartNode(),
                 createBusinessNode(),
+                createStructInputNode(),
                 createEndNode());
 
         command.setNodes(nodes);
@@ -50,7 +51,9 @@ public class FinancialAnalysisWorkflow {
         // 创建边连接节点
         List<WorkflowApplicationService.CreateEdgeCommand> edges = Arrays.asList(
                 createEdge("开始", "业务处理", "开始到业务", "SEQUENCE"),
-                createEdge("业务处理", "结束", "业务到结束", "SEQUENCE"));
+                createEdge("业务处理", "结构化输入", "业务到结构化输入", "SEQUENCE"),
+                createEdge("结构化输入", "结束", "结构化输入到结束", "SEQUENCE")
+        );
 
         command.setEdges(edges);
 
@@ -103,7 +106,7 @@ public class FinancialAnalysisWorkflow {
         WorkflowApplicationService.CreateNodeCommand node = new WorkflowApplicationService.CreateNodeCommand();
         node.setName("结束");
         node.setType(NodeType.END);
-        node.setDependencies(Arrays.asList("业务处理"));
+        node.setDependencies(Arrays.asList("结构化输入"));
         node.setNodeSupplier(() -> new EndNode(NodeId.generate(), node.getName()));
         return node;
     }
@@ -118,7 +121,21 @@ public class FinancialAnalysisWorkflow {
                 .defaultAdvisors(SimpleLoggerAdvisor.builder().build())
                 .build();
 
-        node.setNodeSupplier(() -> new DemoNode(NodeId.generate(), "业务处理", chatClient));
+        node.setNodeSupplier(() -> new DemoNode(NodeId.generate(), node.getName(), chatClient));
+        return node;
+    }
+
+    private WorkflowApplicationService.CreateNodeCommand createStructInputNode() {
+        WorkflowApplicationService.CreateNodeCommand node = new WorkflowApplicationService.CreateNodeCommand();
+        node.setName("结构化输入");
+        node.setType(NodeType.CUSTOM);
+        node.setDependencies(Arrays.asList("业务处理"));
+
+        ChatClient chatClient = ChatClient.builder(chatModel)
+                .defaultAdvisors(SimpleLoggerAdvisor.builder().build())
+                .build();
+
+        node.setNodeSupplier(() -> new StructInputNode(NodeId.generate(), node.getName(),  chatClient));
         return node;
     }
 

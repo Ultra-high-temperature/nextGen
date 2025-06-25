@@ -1,5 +1,8 @@
 package com.example.nextgen.domain.node;
 
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.TypeReference;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -23,7 +26,11 @@ public class EndNode extends WorkflowNode<Map<String, Object>,Map<String, Object
         this.collectAllData = collectAllData;
         this.resultProcessor = resultProcessor;
     }
-    
+    @Override
+    protected Map<String, Object> parseInputObject(String inputJson) {
+        return JSON.parseObject(inputJson, new TypeReference<Map<String, Object>>() {
+        });
+    }
     @Override
     protected Map<String, Object> execute(Map<String, Object> initialData) {
         Map<String, Object> output = new HashMap<>();
@@ -64,7 +71,7 @@ public class EndNode extends WorkflowNode<Map<String, Object>,Map<String, Object
             addExecutionSummary(output);
             
             // 标记执行完成
-            complete(output);
+//            complete(output);
             
         } catch (Exception e) {
             fail("结束节点执行失败: " + e.getMessage());

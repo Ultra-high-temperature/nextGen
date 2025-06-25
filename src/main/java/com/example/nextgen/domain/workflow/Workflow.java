@@ -291,8 +291,8 @@ public class Workflow {
         // 将节点输出添加到全局上下文
         globalContext.putAll(node.getOutputData());
 
-        // 启动新的就绪节点
-        startReadyNodes();
+//        // 启动新的就绪节点
+//        startReadyNodes();
 
         // 检查工作流是否完成
         checkWorkflowCompletion();
