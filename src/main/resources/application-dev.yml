@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: nextGen-dev
+  datasource:
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgresdb:5432/postgres
+
+logging:
+  level:
+    root: INFO
+    com.example.nextgen: DEBUG

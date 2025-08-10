@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc9422c-ac80-4f83-bcc2-c90d9b7ba62f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.devcontainer/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.devcontainer/devcontainer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.devcontainer/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cdc9422c-ac80-4f83-bcc2-c90d9b7ba62f" name="Changes" comment="chore: 初始化项目配置和开发环境&#10;&#10;- 添加 .idea 目录下的各类配置文件，用于配置 IntelliJ IDEA 项目设置&#10;- 新增 .devcontainer 目录及其内容，用于设置 DevContainer 开发环境&#10;- 创建 compiler.xml，配置注解处理器和编译选项- 创建 encodings.xml，设置文件编码&#10;- 创建 jarRepositories.xml，配置 Maven 仓库&#10;- 创建 misc.xml，配置项目根目录和 JDK 版本&#10;- 创建 vcs.xml，配置版本控制系统&#10;- 创建 workspace.xml，保存工作空间设置">
+      <change afterPath="$PROJECT_DIR$/.devcontainer/logstash/config/logstash.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.devcontainer/logstash/pipeline/logstash.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.run/NextGenApplication.run.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.devcontainer/devcontainer.json" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/devcontainer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.devcontainer/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nextgen/NextGenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nextgen/NextGenApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nextgen/business/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nextgen/business/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,9 @@
     &quot;accountId&quot;: &quot;7abca59f-a658-4974-aff8-ac39acd78548&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/6.2.8/spring-webmvc-6.2.8.jar!/org/springframework/web/servlet/DispatcherServlet.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -55,49 +59,127 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker..devcontainer.app: Compose 部署.executor": "Run",
+    "Docker..devcontainer.db: Compose 部署.executor": "Run",
+    "Docker..devcontainer.elasticsearch: Compose 部署.executor": "Run",
+    "Docker..devcontainer.kibana: Compose 部署.executor": "Run",
+    "Docker..devcontainer.logstash: Compose 部署.executor": "Run",
+    "Docker..devcontainer: Compose Deployment.executor": "Run",
+    "Docker..devcontainer: Compose 部署.executor": "Run",
+    "Maven.nextGen [deploy].executor": "Run",
+    "Maven.nextGen [package].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.NextGenApplication.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/code/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "http.proxy",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunManager" selected="Spring Boot.NextGenApplication">
-    <configuration name="NextGenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="nextGen" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.nextgen.NextGenApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name=".devcontainer: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
+    <configuration name=".devcontainer.app: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="services">
+            <list>
+              <option value="app" />
+            </list>
+          </option>
           <option name="sourceFilePath" value=".devcontainer/docker-compose.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name=".devcontainer.db: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value=".devcontainer/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name=".devcontainer.elasticsearch: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="elasticsearch" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value=".devcontainer/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name=".devcontainer.kibana: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="kibana" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value=".devcontainer/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name=".devcontainer.logstash: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="logstash" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value=".devcontainer/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker..devcontainer.app: Compose 部署" />
+      <item itemvalue="Docker..devcontainer.db: Compose 部署" />
+      <item itemvalue="Docker..devcontainer.elasticsearch: Compose 部署" />
+      <item itemvalue="Docker..devcontainer.kibana: Compose 部署" />
+      <item itemvalue="Docker..devcontainer.logstash: Compose 部署" />
+      <item itemvalue="Spring Boot.NextGenApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker..devcontainer: Compose Deployment" />
+        <item itemvalue="Docker..devcontainer.app: Compose 部署" />
+        <item itemvalue="Docker..devcontainer.db: Compose 部署" />
+        <item itemvalue="Docker..devcontainer.kibana: Compose 部署" />
+        <item itemvalue="Docker..devcontainer.logstash: Compose 部署" />
+        <item itemvalue="Docker..devcontainer.elasticsearch: Compose 部署" />
       </list>
     </recent_temporary>
   </component>
@@ -120,11 +202,25 @@
       <workItem from="1754806969149" duration="646000" />
       <workItem from="1754808397142" duration="163000" />
       <workItem from="1754808783348" duration="7000" />
+      <workItem from="1754808799563" duration="7431000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: 初始化项目配置和开发环境&#10;&#10;- 添加 .idea 目录下的各类配置文件，用于配置 IntelliJ IDEA 项目设置&#10;- 新增 .devcontainer 目录及其内容，用于设置 DevContainer 开发环境&#10;- 创建 compiler.xml，配置注解处理器和编译选项- 创建 encodings.xml，设置文件编码&#10;- 创建 jarRepositories.xml，配置 Maven 仓库&#10;- 创建 misc.xml，配置项目根目录和 JDK 版本&#10;- 创建 vcs.xml，配置版本控制系统&#10;- 创建 workspace.xml，保存工作空间设置">
+      <option name="closed" value="true" />
+      <created>1754808931094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1754808931094</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: 初始化项目配置和开发环境&#10;&#10;- 添加 .idea 目录下的各类配置文件，用于配置 IntelliJ IDEA 项目设置&#10;- 新增 .devcontainer 目录及其内容，用于设置 DevContainer 开发环境&#10;- 创建 compiler.xml，配置注解处理器和编译选项- 创建 encodings.xml，设置文件编码&#10;- 创建 jarRepositories.xml，配置 Maven 仓库&#10;- 创建 misc.xml，配置项目根目录和 JDK 版本&#10;- 创建 vcs.xml，配置版本控制系统&#10;- 创建 workspace.xml，保存工作空间设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 初始化项目配置和开发环境&#10;&#10;- 添加 .idea 目录下的各类配置文件，用于配置 IntelliJ IDEA 项目设置&#10;- 新增 .devcontainer 目录及其内容，用于设置 DevContainer 开发环境&#10;- 创建 compiler.xml，配置注解处理器和编译选项- 创建 encodings.xml，设置文件编码&#10;- 创建 jarRepositories.xml，配置 Maven 仓库&#10;- 创建 misc.xml，配置项目根目录和 JDK 版本&#10;- 创建 vcs.xml，配置版本控制系统&#10;- 创建 workspace.xml，保存工作空间设置" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
