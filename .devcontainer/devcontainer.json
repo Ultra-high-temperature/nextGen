@@ -19,6 +19,12 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		"jetbrains": {
+			"settings": {
+				"com.intellij:app:HttpConfigurable.use_http_proxy": true,
+				"com.intellij:app:HttpConfigurable.proxy_host": "127.0.0.1",
+				"com.intellij:app:HttpConfigurable.proxy_port": 7890,
+				"com.intellij:app:HttpConfigurable.proxy_exceptions": ""
+			},
 			"backend": "IntelliJ"
 		}
 	},

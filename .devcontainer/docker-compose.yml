@@ -5,9 +5,7 @@ volumes:
 services:
   app:
     container_name: javadev
-    build: 
-      context: ..
-      dockerfile: Dockerfile
+    image: devcontainer-app:latest
     environment:
       # NOTE: POSTGRES_DB/USER/PASSWORD should match values in db container
         POSTGRES_PASSWORD: postgres
@@ -17,6 +15,7 @@ services:
 
     volumes:
       - ..:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
       
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -36,7 +35,7 @@ services:
 
   db:
     container_name: postgresdb
-    image: postgres:15
+    image: postgres:17
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data

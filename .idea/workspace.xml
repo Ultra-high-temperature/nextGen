@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdc9422c-ac80-4f83-bcc2-c90d9b7ba62f" name="Changes" comment="chore: 初始化项目配置和开发环境&#10;&#10;- 添加 .idea 目录下的各类配置文件，用于配置 IntelliJ IDEA 项目设置&#10;- 新增 .devcontainer 目录及其内容，用于设置 DevContainer 开发环境&#10;- 创建 compiler.xml，配置注解处理器和编译选项- 创建 encodings.xml，设置文件编码&#10;- 创建 jarRepositories.xml，配置 Maven 仓库&#10;- 创建 misc.xml，配置项目根目录和 JDK 版本&#10;- 创建 vcs.xml，配置版本控制系统&#10;- 创建 workspace.xml，保存工作空间设置">
-      <change afterPath="$PROJECT_DIR$/.devcontainer/logstash/config/logstash.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.devcontainer/logstash/pipeline/logstash.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.run/NextGenApplication.run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apache-maven-3.9.11-bin.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.devcontainer/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.devcontainer/devcontainer.json" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/devcontainer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.devcontainer/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nextgen/NextGenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nextgen/NextGenApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nextgen/business/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nextgen/business/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +42,6 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -76,29 +67,74 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.NextGenApplication (1).executor": "Debug",
     "Spring Boot.NextGenApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/code/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "http.proxy",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Bookmarks" side_tool="true" />
+      <window_info id="Merge Requests" />
+      <window_info id="Backup and Sync History" />
+      <window_info id="Commit_Guest" show_stripe_button="false" />
+      <window_info id="Pull Requests" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26659453" />
+      <window_info id="Commit" order="1" weight="0.33014446" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Profiler" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="File Transfer" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.16767372" />
+      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="bottom" id="Build" order="5" weight="0.16762383" />
+      <window_info anchor="bottom" id="Debug" order="6" visible="true" weight="0.16767372" />
+      <window_info anchor="right" id="Endpoints" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="right" id="Beans" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.29329005" />
+      <window_info anchor="right" id="Database" order="2" weight="0.29040402" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.29040402" />
+      <window_info anchor="right" id="Translation.Wordbook" order="5" side_tool="true" />
+    </layout>
+  </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.NextGenApplication">
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\java\nextGen" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NextGenApplication (1)">
+    <configuration name="NextGenApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="nextGen" />
+      <target name="@@@LOCAL@@@" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.nextgen.NextGenApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name=".devcontainer.app: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker for windows">
       <deployment type="docker-compose.yml">
@@ -165,6 +201,12 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker..devcontainer.app: Compose 部署" />
       <item itemvalue="Docker..devcontainer.db: Compose 部署" />
@@ -172,6 +214,7 @@
       <item itemvalue="Docker..devcontainer.kibana: Compose 部署" />
       <item itemvalue="Docker..devcontainer.logstash: Compose 部署" />
       <item itemvalue="Spring Boot.NextGenApplication" />
+      <item itemvalue="Spring Boot.NextGenApplication (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -186,8 +229,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -203,6 +246,10 @@
       <workItem from="1754808397142" duration="163000" />
       <workItem from="1754808783348" duration="7000" />
       <workItem from="1754808799563" duration="7431000" />
+      <workItem from="1754834515347" duration="1073000" />
+      <workItem from="1754841379092" duration="288000" />
+      <workItem from="1754841958782" duration="395000" />
+      <workItem from="1754842584660" duration="1335000" />
     </task>
     <task id="LOCAL-00001" summary="chore: 初始化项目配置和开发环境&#10;&#10;- 添加 .idea 目录下的各类配置文件，用于配置 IntelliJ IDEA 项目设置&#10;- 新增 .devcontainer 目录及其内容，用于设置 DevContainer 开发环境&#10;- 创建 compiler.xml，配置注解处理器和编译选项- 创建 encodings.xml，设置文件编码&#10;- 创建 jarRepositories.xml，配置 Maven 仓库&#10;- 创建 misc.xml，配置项目根目录和 JDK 版本&#10;- 创建 vcs.xml，配置版本控制系统&#10;- 创建 workspace.xml，保存工作空间设置">
       <option name="closed" value="true" />
